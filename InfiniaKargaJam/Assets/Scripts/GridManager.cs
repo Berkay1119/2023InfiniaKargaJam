@@ -65,14 +65,16 @@ public class GridManager : MonoBehaviour
         if (tile.coordinateX - 1 >= 0)
             tile.cardinalAdjacentTiles.Add(map[tile.coordinateX - 1, tile.coordinateY]);
         
+        if (tile.coordinateY + 1 <  map.GetLength(1))
+            tile.cardinalAdjacentTiles.Add(map[tile.coordinateX, tile.coordinateY + 1]);
+        
         if (tile.coordinateX + 1 <  map.GetLength(0))
             tile.cardinalAdjacentTiles.Add(map[tile.coordinateX + 1, tile.coordinateY]);
         
         if (tile.coordinateY - 1 >= 0)
             tile.cardinalAdjacentTiles.Add(map[tile.coordinateX, tile.coordinateY - 1]);
         
-        if (tile.coordinateY + 1 <  map.GetLength(1))
-            tile.cardinalAdjacentTiles.Add(map[tile.coordinateX, tile.coordinateY + 1]);
+        
     }
 
     private void SetDiagonalTiles(Tile tile)

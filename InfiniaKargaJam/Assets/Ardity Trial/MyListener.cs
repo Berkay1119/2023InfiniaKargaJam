@@ -11,6 +11,10 @@ public class MyListener : MonoBehaviour
         {
             string[] stringArray=msg.Split(" ");
             Debug.Log(stringArray[0]+stringArray[1]);
+            if (float.Parse(stringArray[1])==0f)
+            {
+                transform.Translate(Vector3.forward);
+            }
         }
     }
 

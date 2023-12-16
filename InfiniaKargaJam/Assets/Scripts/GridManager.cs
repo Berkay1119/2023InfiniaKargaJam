@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GridManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform _cameraTrnasform;
     [SerializeField] private Tile[,] map;
+    [SerializeField] private GameObject playerPrefab;
 
     private void Start()
     {
@@ -45,6 +47,10 @@ public class GridManager : MonoBehaviour
                 SetCardinalTiles(map[x,y]);
             }
         }
+
+        Player player=Instantiate(playerPrefab).GetComponent<Player>();
+        player.transform.position = map[2, 0].transform.position;
+        player.SetTile(map[2,0]);
     }
 
     private void SetCardinalTiles(Tile tile)

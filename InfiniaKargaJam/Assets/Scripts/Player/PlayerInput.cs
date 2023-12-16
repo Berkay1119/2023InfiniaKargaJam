@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private Player player;
     [SerializeField] private float holdThresholdAsSecond=2f;
     private Coroutine[] holdCoroutine = new Coroutine[4];
     private bool[] coroutineIsRunning = new bool[4];
@@ -46,22 +46,22 @@ public class PlayerInput : MonoBehaviour
             if (stringArray[0]=="1")
             {
                 // Right Movement
-                playerMovement.Move(Vector2.right);
+                player.Move(Vector2.right);
             }
             else if(stringArray[0]=="2")
             {
                 // Left Movement
-                playerMovement.Move(Vector2.left);
+                player.Move(Vector2.left);
             }
             else if(stringArray[0]=="3")
             {
                 // Up Movement
-                playerMovement.Move(Vector2.up);
+                player.Move(Vector2.up);
             }
             else if(stringArray[0]=="4")
             {
                 // Down Movement
-                playerMovement.Move(Vector2.down);
+                player.Move(Vector2.down);
             }
         }
     }

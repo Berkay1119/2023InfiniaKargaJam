@@ -10,7 +10,8 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform _cameraTrnasform;
     [SerializeField] private Tile[,] map;
-    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject playerOnePrefab;
+    [SerializeField] private GameObject playerTwoPrefab;
 
     private void Start()
     {
@@ -48,9 +49,14 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        Player player=Instantiate(playerPrefab).GetComponent<Player>();
+        Player player=Instantiate(playerOnePrefab).GetComponent<Player>();
         player.transform.position = map[2, 0].transform.position;
         player.SetTile(map[2,0]);
+        
+        player=Instantiate(playerTwoPrefab).GetComponent<Player>();
+        player.transform.position = map[2, 8].transform.position;
+        player.SetTile(map[2,8]);
+        player.MakeReverse();
     }
 
     private void SetCardinalTiles(Tile tile)

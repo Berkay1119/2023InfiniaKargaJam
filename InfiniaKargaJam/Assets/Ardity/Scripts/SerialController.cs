@@ -54,6 +54,7 @@ public class SerialController : MonoBehaviour
     // Internal reference to the Thread and the object that runs in it.
     protected Thread thread;
     protected SerialThreadLines serialThread;
+    protected PlayerInput player;
 
 
     // ------------------------------------------------------------------------
@@ -67,6 +68,8 @@ public class SerialController : MonoBehaviour
                                              baudRate, 
                                              reconnectionDelay,
                                              maxUnreadMessages);
+
+        player = messageListener.GetComponent<PlayerInput>();
         thread = new Thread(new ThreadStart(serialThread.RunForever));
         thread.Start();
     }
@@ -107,6 +110,10 @@ public class SerialController : MonoBehaviour
     // ------------------------------------------------------------------------
     void Update()
     {
+        if (player.isKeyboardPlayer)
+        {
+            return;
+        }
         // If the user prefers to poll the messages instead of receiving them
         // via SendMessage, then the message listener should be null.
         if (messageListener == null)

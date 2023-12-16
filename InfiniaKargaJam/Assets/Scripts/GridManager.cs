@@ -8,7 +8,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int _height, _width;
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform _cameraTrnasform;
-    [SerializeField] private Tile[,] map;
+    public Tile[,] map;
 
     private void Start()
     {

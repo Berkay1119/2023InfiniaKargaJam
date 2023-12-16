@@ -12,12 +12,13 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tile[,] map;
     [SerializeField] private GameObject playerOnePrefab;
     [SerializeField] private GameObject playerTwoPrefab;
+    [SerializeField] private float sizeMultiplier;
 
     private void Start()
     {
         GenerateGrid();
 
-        _cameraTrnasform.position = new Vector3(_width / 2, _height / 2, -5);
+        //_cameraTrnasform.position = new Vector3(_width / 2, _height / 2, -5);
     }
     
     private void GenerateGrid()
@@ -27,7 +28,7 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < _width; y++)
             {
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(y, x), Quaternion.identity);
+                var spawnedTile = Instantiate(_tilePrefab, new Vector3(y * sizeMultiplier, x * sizeMultiplier), Quaternion.identity);
                 map[x, y] = spawnedTile.GetComponent<Tile>();
                 spawnedTile.name = $"Tile {x}, {y} ";
 

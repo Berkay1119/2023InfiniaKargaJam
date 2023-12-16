@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c003b75459409695a695e641ba0a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3
+  playerSpeed: 3.7
   playerInput: {fileID: 303354208870107277}
   animator: {fileID: 7923400207305253122}
 --- !u!1001 &1070781821480063137

@@ -17,4 +17,19 @@ public class Tile : MonoBehaviour
     {
         _renderer.color = isOffset ? _offsetColor : _baseColor;
     }
+
+    public Tile FindNextTile(Vector2 vector)
+    {
+        int newX=coordinateX + (int)vector.y;
+        int newY = coordinateY + (int)vector.x;
+        foreach (var tile in cardinalAdjacentTiles)
+        {
+            if (tile.coordinateX==newX && tile.coordinateY==newY)
+            {
+                return tile;
+            }
+        }
+
+        return null;
+    }
 }

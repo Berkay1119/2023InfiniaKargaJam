@@ -2,19 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GridManager : MonoBehaviour
 {
     [SerializeField] private int _height, _width;
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform _cameraTrnasform;
-    public Tile[,] map;
+    [SerializeField] private Tile[,] map;
+    [SerializeField] private GameObject playerOnePrefab;
+    [SerializeField] private GameObject playerTwoPrefab;
+    [SerializeField] private float sizeMultiplier;
 
     private void Start()
     {
         GenerateGrid();
 
-        _cameraTrnasform.position = new Vector3(_width / 2, _height / 2, -5);
+        //_cameraTrnasform.position = new Vector3(_width / 2, _height / 2, -5);
     }
     
     private void GenerateGrid()
@@ -24,7 +28,7 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < _width; y++)
             {
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(y, x), Quaternion.identity);
+                var spawnedTile = Instantiate(_tilePrefab, new Vector3(y * sizeMultiplier, x * sizeMultiplier), Quaternion.identity);
                 map[x, y] = spawnedTile.GetComponent<Tile>();
                 spawnedTile.name = $"Tile {x}, {y} ";
 
@@ -45,6 +49,15 @@ public class GridManager : MonoBehaviour
                 SetCardinalTiles(map[x,y]);
             }
         }
+
+        Player player=Instantiate(playerOnePrefab).GetComponent<Player>();
+        player.transform.position = map[2, 0].transform.position;
+        player.SetTile(map[2,0]);
+        
+        player=Instantiate(playerTwoPrefab).GetComponent<Player>();
+        player.transform.position = map[2, 8].transform.position;
+        player.SetTile(map[2,8]);
+        player.MakeReverse();
     }
 
     private void SetCardinalTiles(Tile tile)

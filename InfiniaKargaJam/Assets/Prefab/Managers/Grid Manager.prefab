@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6850351001829746904
 MonoBehaviour:
@@ -48,3 +48,5 @@ MonoBehaviour:
   _width: 9
   _tilePrefab: {fileID: 3463103019619116267, guid: b311ea114f078214dbf0a4db5d744ec5, type: 3}
   _cameraTrnasform: {fileID: 0}
+  playerOnePrefab: {fileID: 4561859747015712930, guid: 0e7defa28b0896c4288ad9cdc0a88f0a, type: 3}
+  playerTwoPrefab: {fileID: 8269744225687628459, guid: be3b58705d7856541bba30b3f48f2d9c, type: 3}

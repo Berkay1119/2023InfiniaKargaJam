@@ -6,11 +6,14 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
+    public bool isKeyboardPlayer;
+    
+    [SerializeField] private Player player;
     [SerializeField] private float holdThresholdAsSecond=2f;
     private Coroutine[] holdCoroutine = new Coroutine[4];
     private bool[] coroutineIsRunning = new bool[4];
     private bool[] coroutineIsCompleted = new bool[4];
+
     
     private void OnMessageArrived(string msg)
     {
@@ -46,24 +49,76 @@ public class PlayerInput : MonoBehaviour
             if (stringArray[0]=="1")
             {
                 // Right Movement
-                playerMovement.Move(Vector2.right);
+                player.Move(Vector2.right);
             }
             else if(stringArray[0]=="2")
             {
                 // Left Movement
-                playerMovement.Move(Vector2.left);
+                player.Move(Vector2.left);
             }
             else if(stringArray[0]=="3")
             {
                 // Up Movement
-                playerMovement.Move(Vector2.up);
+                player.Move(Vector2.up);
             }
             else if(stringArray[0]=="4")
             {
                 // Down Movement
-                playerMovement.Move(Vector2.down);
+                player.Move(Vector2.down);
             }
         }
+    }
+
+
+    private void Update()
+    {
+        if (!isKeyboardPlayer)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            int playerNumber = 1;
+            OnMessageArrived(playerNumber.ToString()+" "+0);
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            int playerNumber = 2;
+            OnMessageArrived(playerNumber.ToString()+" "+0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            int playerNumber = 3;
+            OnMessageArrived(playerNumber.ToString()+" "+0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            int playerNumber = 4;
+            OnMessageArrived(playerNumber.ToString()+" "+0);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            int playerNumber = 1;
+            OnMessageArrived(playerNumber.ToString()+" "+1);
+        }
+        else if(Input.GetKeyUp(KeyCode.Alpha4))
+        {
+            int playerNumber = 2;
+            OnMessageArrived(playerNumber.ToString()+" "+1);
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha7))
+        {
+            int playerNumber = 3;
+            OnMessageArrived(playerNumber.ToString()+" "+1);
+        }
+        else if (Input.GetKeyUp(KeyCode.Alpha0))
+        {
+            int playerNumber = 4;
+            OnMessageArrived(playerNumber.ToString()+" "+1);
+        }
+        
     }
 
     private IEnumerator HoldCoroutine(int coroutineIndex)

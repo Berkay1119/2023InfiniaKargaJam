@@ -50,8 +50,8 @@ MonoBehaviour:
   rewardHazardPrefabs:
   - {fileID: 531865813928309690, guid: 1e4c211ea6ad88a4bbadae7fa71a5be5, type: 3}
   firstCoinDelayAsSecond: 0
-  minSpawnSecondForCoin: 3
-  maxSpawnSecondForCoin: 7
+  minSpawnSecondForCoin: 7
+  maxSpawnSecondForCoin: 11
   totalCoinCount: 20
   firstOtherDelayAsSecond: 5
   minSpawnSecondForOther: 3

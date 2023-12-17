@@ -37,7 +37,7 @@ public class Laser:Ability
     public override void Released(Player player)
     {
         base.Released(player);
-
+        
         if (holdCoroutine!=null)
         {
             StopCoroutine(holdCoroutine);

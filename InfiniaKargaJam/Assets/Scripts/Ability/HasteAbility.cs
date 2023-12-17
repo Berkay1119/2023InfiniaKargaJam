@@ -17,5 +17,6 @@ public class HasteAbility:Ability
         player.MakeFaster(fasterSpeed);
         yield return new WaitForSeconds(hasteDuration);
         player.MakeFaster(originalSpeed);
+        Destroy(gameObject);
     }
 }

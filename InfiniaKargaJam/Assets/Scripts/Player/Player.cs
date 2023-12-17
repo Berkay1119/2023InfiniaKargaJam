@@ -142,6 +142,7 @@ public class Player:MonoBehaviour
 
     public void ActivateAbility(int commandIndex)
     {
+        LockInput(true);
         if (abilities[commandIndex]!=null)
         {
             abilities[commandIndex].Use(this);
@@ -150,6 +151,7 @@ public class Player:MonoBehaviour
 
     public void AbilityReleased(int commandIndex)
     {
+        LockInput(false);
         if (abilities[commandIndex]!=null)
         {
             abilities[commandIndex].Released(this);
@@ -202,5 +204,10 @@ public class Player:MonoBehaviour
 
         int randomIndex = availableIndices[Random.Range(0, availableIndices.Count)];
         abilities[randomIndex] = ability;
+    }
+
+    public void LockInput(bool inputLock)
+    {
+        playerInput.locked = inputLock;
     }
 }

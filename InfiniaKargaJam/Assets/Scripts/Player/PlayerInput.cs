@@ -17,8 +17,8 @@ public class PlayerInput : MonoBehaviour
     
     private void OnMessageArrived(string msg)
     {
+        
         string[] stringArray=msg.Split(" ");
-
         
         if (stringArray[1]=="0")
         {
@@ -41,6 +41,7 @@ public class PlayerInput : MonoBehaviour
             if (coroutineIsCompleted[int.Parse(stringArray[0])-1])
             {
                 coroutineIsCompleted[int.Parse(stringArray[0]) - 1] = false;
+                player.AbilityReleased(int.Parse(stringArray[0]) - 1);
                 return;
             }
             
@@ -125,7 +126,7 @@ public class PlayerInput : MonoBehaviour
     {
         coroutineIsCompleted[coroutineIndex] = false;
         yield return new WaitForSeconds(holdThresholdAsSecond);
-        // TODO:Activate ability
+        player.ActivateAbility(coroutineIndex);
         Debug.Log("Activate Ability");
         coroutineIsRunning[coroutineIndex] = false;
         coroutineIsCompleted[coroutineIndex] = true;

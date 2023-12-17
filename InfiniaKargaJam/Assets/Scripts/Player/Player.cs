@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class Player:MonoBehaviour
     private Tile currentTile;
     private bool isMoving;
     private static readonly int isMovingParameter = Animator.StringToHash("isMoving");
-
+    [SerializeField] private Ability[] abilities = new Ability[4]; 
     public void Move(Vector2 vector)
     {
         if (isMoving)
@@ -35,10 +36,11 @@ public class Player:MonoBehaviour
                 transform.localScale =
                     new Vector3(currentTile.transform.position.x > tile.transform.position.x ? -1 : 1,1, 1);
             }
-            
-            
+            currentTile.currentPlayer = null;
         }
+        
         currentTile = tile;
+        currentTile.currentPlayer = this;
         GoToTile(currentTile);
     }
     private void GoToTile(Tile tile)
@@ -57,5 +59,26 @@ public class Player:MonoBehaviour
     public void MakeReverse()
     {
         transform.localScale = new Vector3(-1, 1 ,1);
+    }
+
+    public Tile GetCurrentTile()
+    {
+        return currentTile;
+    }
+
+    public void ActivateAbility(int commandIndex)
+    {
+        if (abilities[commandIndex]!=null)
+        {
+            abilities[commandIndex].Use(this);
+        }
+    }
+
+    public void AbilityReleased(int commandIndex)
+    {
+        if (abilities[commandIndex]!=null)
+        {
+            abilities[commandIndex].Released(this);
+        }
     }
 }

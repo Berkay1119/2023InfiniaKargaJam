@@ -163,4 +163,15 @@ public class Player:MonoBehaviour
     {
         return trapToSpawn;
     }
+
+    public void MakeFaster(float newSpeed)
+    { ;
+        playerSpeed = newSpeed;
+        
+    }
+
+    public float GetSpeed()
+    {
+        return playerSpeed;
+    }
 }

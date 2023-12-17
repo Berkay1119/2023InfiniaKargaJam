@@ -52,7 +52,7 @@ public class SpawnableManager : MonoBehaviour
         {
             for (int y = 0; y < _gridManager.map.GetLength(1); y++)
             {
-                if (_gridManager.map[x, y].spawnable == null)
+                if (_gridManager.map[x, y].spawnable == null && _gridManager.map[x,y].currentPlayer==null)
                 {
                     emptyTiles.Add(_gridManager.map[x, y]);
                 }

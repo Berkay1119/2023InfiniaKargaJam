@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: playerSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8201025230367050163, guid: 0e7defa28b0896c4288ad9cdc0a88f0a, type: 3}
+      propertyPath: trapToSpawn
+      value: 
+      objectReference: {fileID: 531865813928309690, guid: 715cc70b06e6ed1409e44327fe135360, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

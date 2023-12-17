@@ -22,6 +22,8 @@ public class Player:MonoBehaviour
     [SerializeField] private Ability[] abilities = new Ability[4];
 
     [SerializeField] private GameObject boxToSpawn;
+
+    [SerializeField] private GameObject trapToSpawn;
     public void Move(Vector2 vector)
     {
         if (isMoving)
@@ -155,5 +157,10 @@ public class Player:MonoBehaviour
     public GameObject GetBox()
     {
         return boxToSpawn;
+    }
+
+    public GameObject GetTrap()
+    {
+        return trapToSpawn;
     }
 }

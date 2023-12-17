@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   boxToSpawn: {fileID: 531865813928309690, guid: 2ade4f050f032f34094b8a3137168d65, type: 3}
+  trapToSpawn: {fileID: 531865813928309690, guid: edcce53160d4e804a9e3764f53dc895a, type: 3}
 --- !u!1001 &1070781821480063137
 PrefabInstance:
   m_ObjectHideFlags: 0

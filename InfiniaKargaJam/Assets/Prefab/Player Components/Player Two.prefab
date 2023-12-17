@@ -63,11 +63,15 @@ PrefabInstance:
     - target: {fileID: 6024605515231010313, guid: 0e7defa28b0896c4288ad9cdc0a88f0a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1622802553, guid: 2b3dd56941eff9e45a98715b2573f364, type: 3}
+      objectReference: {fileID: -54910245, guid: 4da6ebdf9be5c4c4b8c60720c89201ae, type: 3}
     - target: {fileID: 7923400207305253122, guid: 0e7defa28b0896c4288ad9cdc0a88f0a, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f1ecb308249b09746b4517d2101bf6ad, type: 2}
+    - target: {fileID: 8201025230367050163, guid: 0e7defa28b0896c4288ad9cdc0a88f0a, type: 3}
+      propertyPath: playerSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

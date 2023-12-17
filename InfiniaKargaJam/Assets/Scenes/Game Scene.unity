@@ -417,8 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88be086299d4f534791cd9f6dde49390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeIntensity: 5
-  shakeDuration: 0.2
+  shakeIntensity: 0.3
+  shakeDuration: 0.1
 --- !u!114 &1163218013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6861785105847579675, guid: acddc2980a443314191e7630ffb40a3c, type: 3}

@@ -1,0 +1,503 @@
+fileFormatVersion: 2
+guid: cafc2db7f47dc544b948af61dc1499c6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: trap_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 550
+        width: 87
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc17662f1a9d08140a8c0dec672c696d
+      internalID: 580268062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 538
+        width: 163
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15dd4a09d7f6a6c4584dfc4acf3f5593
+      internalID: 462845149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 550
+        width: 95
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89eeb1780b769f499ee21cab856cc58
+      internalID: -1427971537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 549
+        width: 102
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea12d1fab599a74dbe553b7f0324852
+      internalID: 798718048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 550
+        width: 113
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c81a9f9d0fdc0498fe384ae76fd414
+      internalID: -1956747287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 280
+        width: 87
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2507e94a311b64ea9364adbcfba4be
+      internalID: -1041579873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 270
+        width: 163
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64218c2838e839c4b89d2ccfd88dd535
+      internalID: -1707174729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 95
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c43c81d0025814cb2546f840361789
+      internalID: -1265437948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 279
+        width: 108
+        height: 208
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265833cdb2c1e924fbd5b2df81fe23fa
+      internalID: 1980658466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 280
+        width: 113
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d6ce005e58183489e50e9642af350b
+      internalID: -993699999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 10
+        width: 87
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60f79b4a8e1f0249bc9669b54808a4b
+      internalID: -199621922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 0
+        width: 163
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d87b9d5e8679af44a31ef14c081dfec
+      internalID: -1990162757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 95
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baed06f6876d76f4d9ababeb5d809799
+      internalID: 2111699755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 8
+        width: 102
+        height: 210
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf183c0574a6fc44997d563ae567b1e
+      internalID: 1774405130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 10
+        width: 113
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ed7d2eafea47842a19cdfff3b42c89
+      internalID: 1887827754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      trap_sheet_0: 580268062
+      trap_sheet_1: 73340613
+      trap_sheet_10: -1118378775
+      trap_sheet_11: 1245841206
+      trap_sheet_12: 798718048
+      trap_sheet_13: -774684616
+      trap_sheet_14: -1956747287
+      trap_sheet_15: 1980776493
+      trap_sheet_16: -1824647619
+      trap_sheet_17: -1294174775
+      trap_sheet_18: 1652081235
+      trap_sheet_19: 1642356921
+      trap_sheet_2: -1662833768
+      trap_sheet_20: -1041579873
+      trap_sheet_21: -1852579304
+      trap_sheet_22: 131731083
+      trap_sheet_23: -1448464348
+      trap_sheet_24: -655081243
+      trap_sheet_25: -1707174729
+      trap_sheet_26: 1023492498
+      trap_sheet_27: -1265437948
+      trap_sheet_28: 954889632
+      trap_sheet_29: -59965995
+      trap_sheet_3: 222243470
+      trap_sheet_30: 978019447
+      trap_sheet_31: 1357575858
+      trap_sheet_32: 1980658466
+      trap_sheet_33: -1246635811
+      trap_sheet_34: -993699999
+      trap_sheet_35: -1715859328
+      trap_sheet_36: -1330615386
+      trap_sheet_37: -242772384
+      trap_sheet_38: -1800318281
+      trap_sheet_39: -372339104
+      trap_sheet_4: -1439422476
+      trap_sheet_40: -199621922
+      trap_sheet_41: 276178020
+      trap_sheet_42: 1918830241
+      trap_sheet_43: -883265273
+      trap_sheet_44: -235883740
+      trap_sheet_45: -1990162757
+      trap_sheet_46: 1428390377
+      trap_sheet_47: 2111699755
+      trap_sheet_48: 2037634251
+      trap_sheet_49: 139392340
+      trap_sheet_5: 462845149
+      trap_sheet_50: 1952784785
+      trap_sheet_51: 1384539106
+      trap_sheet_52: 1774405130
+      trap_sheet_53: -517570977
+      trap_sheet_54: 1887827754
+      trap_sheet_55: 42995346
+      trap_sheet_56: 1229857452
+      trap_sheet_57: 1361173613
+      trap_sheet_58: 74759045
+      trap_sheet_59: -571039257
+      trap_sheet_6: 1569717225
+      trap_sheet_60: -288890507
+      trap_sheet_7: -1427971537
+      trap_sheet_8: 643414529
+      trap_sheet_9: -2128150567
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

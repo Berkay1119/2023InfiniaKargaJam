@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7530447704795169423}
   - component: {fileID: -6264249233253813817}
   - component: {fileID: 3730856844252089353}
+  - component: {fileID: 6703199587064077622}
   m_Layer: 0
-  m_Name: Trap
+  m_Name: TrapNeutral
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +49,7 @@ MonoBehaviour:
   spawnedTile: {fileID: 0}
   lifeTime: 50
   destroyAnimationStartOffset: 3
-  who: 2
+  owner: {fileID: 0}
   renderer: {fileID: 3730856844252089353}
 --- !u!212 &3730856844252089353
 SpriteRenderer:
@@ -91,8 +92,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51c53cec38a96384f8317df78dfe64a2, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.10410547, a: 1}
+  m_Sprite: {fileID: 580268062, guid: cafc2db7f47dc544b948af61dc1499c6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,3 +103,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6703199587064077622
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531865813928309690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 093cb7508e8153345954c02dcff11673, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

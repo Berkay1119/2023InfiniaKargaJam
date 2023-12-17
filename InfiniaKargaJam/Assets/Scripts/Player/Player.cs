@@ -77,6 +77,7 @@ public class Player:MonoBehaviour
     public void TakeDamage()
     {
         DropCoins();
+        CameraShakeManager.Instance.StartShake();
         StartCoroutine(DamageTakenCoroutine());
     }
 

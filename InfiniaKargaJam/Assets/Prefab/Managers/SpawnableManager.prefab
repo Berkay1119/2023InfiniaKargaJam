@@ -56,3 +56,11 @@ MonoBehaviour:
   firstOtherDelayAsSecond: 5
   minSpawnSecondForOther: 3
   maxSpawnSecondForOther: 15
+  firstDropDelaySecond: 0
+  minSpawnSecondForAbilityDrop: 3
+  maxSpawnSecondForAbilityDrop: 10
+  dropPrefabs:
+  - {fileID: 5008774287588776058, guid: c013be11bf59aed499331d55c2151a67, type: 3}
+  - {fileID: 5008774287588776058, guid: 838db27af6b1d4e458f73734e880cc38, type: 3}
+  - {fileID: 8005919529818943008, guid: 93b1f50e5afe9bd47b3229322120633e, type: 3}
+  - {fileID: 5008774287588776058, guid: e92ec9a698e4aad4d8076962d77c42b3, type: 3}

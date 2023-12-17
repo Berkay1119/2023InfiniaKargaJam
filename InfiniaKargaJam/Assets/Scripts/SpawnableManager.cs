@@ -26,6 +26,12 @@ public class SpawnableManager : MonoBehaviour
     [SerializeField] private float minSpawnSecondForOther=3f;
     [SerializeField] private float maxSpawnSecondForOther=15f;
 
+    [Header("AbilityDrop")] 
+    [SerializeField] private float firstDropDelaySecond;
+    [SerializeField] private float minSpawnSecondForAbilityDrop=3f;
+    [SerializeField] private float maxSpawnSecondForAbilityDrop=10f;
+    [SerializeField] private List<GameObject> dropPrefabs;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this) 
@@ -40,8 +46,9 @@ public class SpawnableManager : MonoBehaviour
     
     private void Start()
     {
-        //Invoke("SpawnCoin", firstCoinDelayAsSecond);
+        Invoke("SpawnCoin", firstCoinDelayAsSecond);
         Invoke("SpawnRewardOrHazard", firstOtherDelayAsSecond);
+        Invoke("SpawnAbility",firstDropDelaySecond);
     }
 
     private void GetEmptyTiles()
@@ -134,6 +141,27 @@ public class SpawnableManager : MonoBehaviour
             }
 
             yield return new WaitForSeconds(Random.Range(minSpawnSecondForOther, maxSpawnSecondForOther));
+        }
+    }
+
+    private void SpawnAbility()
+    {
+        StartCoroutine(SpawnAbilityRoutine());
+    }
+
+    private IEnumerator SpawnAbilityRoutine()
+    {
+        while (true)
+        {
+            GetEmptyTiles();
+            if (emptyTiles.Count > 0)
+            {
+                Tile randomTile = emptyTiles[Random.Range(0, emptyTiles.Count)];
+                GameObject gameObject = dropPrefabs[Random.Range(0, dropPrefabs.Count)];
+                Spawn(gameObject, randomTile);
+            }
+
+            yield return new WaitForSeconds(Random.Range(minSpawnSecondForAbilityDrop, maxSpawnSecondForAbilityDrop));
         }
     }
 }

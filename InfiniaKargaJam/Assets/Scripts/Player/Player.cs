@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class Player:MonoBehaviour
@@ -173,5 +174,32 @@ public class Player:MonoBehaviour
     public float GetSpeed()
     {
         return playerSpeed;
+    }
+
+
+    public void TakeAbility(GameObject prefab)
+    {
+        Ability ability=Instantiate(prefab, transform.position, Quaternion.identity, transform).GetComponent<Ability>();
+        PlaceAbility(ability);
+    }
+
+    private void PlaceAbility(Ability ability)
+    {
+        List<int> availableIndices = new List<int>();
+        for (int i = 0; i < abilities.Length; i++)
+        {
+            if (abilities[i]==null)
+            {
+                availableIndices.Add(i);
+            }
+        }
+
+        if (availableIndices.Count==0)
+        {
+            availableIndices = new List<int>() { 1, 2, 3, 4 };
+        }
+
+        int randomIndex = availableIndices[Random.Range(0, availableIndices.Count)];
+        abilities[randomIndex] = ability;
     }
 }

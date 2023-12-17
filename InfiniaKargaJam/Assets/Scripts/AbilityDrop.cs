@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class AbilityDrop : Loot
 {
-    public enum AbilityType {Laser, Trap, Explosion, Wall, Haste}
-    public AbilityType abilityType;
+    [SerializeField] private GameObject prefabForAbility;
     
     public override void Collect(Player player)
     {
-        //TODO add ability to random slot
+        player.TakeAbility(prefabForAbility);
         DestroyObject();
     }
 }

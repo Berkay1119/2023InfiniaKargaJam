@@ -15,6 +15,7 @@ public class HasteAbility:Ability
     private IEnumerator EndOfHasteCoRoutine(Player player,float originalSpeed)
     {
         player.MakeFaster(fasterSpeed);
+        sprite = null;
         yield return new WaitForSeconds(hasteDuration);
         player.MakeFaster(originalSpeed);
         Destroy(gameObject);

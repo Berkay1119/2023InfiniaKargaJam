@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae919070df2a449ea14b900c792a61e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 35cc7b0dd78d61749b489840a7ac48ad, type: 3}
   hasteDuration: 3
   fasterSpeed: 5

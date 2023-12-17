@@ -4926,6 +4926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1866dabbecf94f839fdd297e9ba696ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 9393a8fb66931b8449e45e305f473e16, type: 3}
   ball: {fileID: 3048675811033087822}
   ballSpeed: 10
   ballRotateSpeed: 120

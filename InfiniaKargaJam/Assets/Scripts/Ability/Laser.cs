@@ -49,11 +49,15 @@ public class Laser:Ability
         {
             StopCoroutine(holdCoroutine);
         }
-        
+
+        bool playerFound = false;
+        float maxDistance=0;
+        Tile maxDistanceTile = null;
         foreach (var tile in dangerousTiles)
         {
             if (tile.currentPlayer!=null && tile.currentPlayer!=player)
             {
+                playerFound = true;
                 //TODO:Take Damage
                 Debug.Log("Damage taken");
                 ball.transform.parent = null;
@@ -70,9 +74,30 @@ public class Laser:Ability
                     Destroy(ball);
                 });
             }
-
+            else
+            {
+                float distance = Vector3.Distance(transform.position , tile.transform.position);
+                if (distance>maxDistance)
+                {
+                    maxDistanceTile = tile;
+                    maxDistance = distance;
+                }
+            }
             tile.MakeUnDangerous();
+            
         }
+
+        if (!playerFound && maxDistanceTile!=null)
+        {
+            ball.transform.parent = null;
+            ball.gameObject.SetActive(true);
+            ball.transform.DORotate(Vector3.forward*360f, ballRotateSpeed,RotateMode.FastBeyond360).SetSpeedBased();
+            ball.transform.DOMove(maxDistanceTile.transform.position, ballSpeed).SetSpeedBased().OnComplete(() =>
+            {
+                Destroy(ball);
+            });
+        }
+        
         dangerousTiles.Clear();
         Destroy(gameObject);
     }

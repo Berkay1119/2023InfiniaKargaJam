@@ -54,6 +54,11 @@ public class GameManager : MonoBehaviour
         roundEnded = false;
     }
 
+    private void Start()
+    {
+        FillScoreBoard();
+    }
+
     private void Update()
     {
         if(!roundEnded) 
@@ -74,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     private void EndRound()
     {
+        SoundManager.Instance.sfxAudioSource.PlayOneShot(SoundManager.Instance.gameOverClip);
         var player1CoinCount = player1.coinCount;
         var player2CoinCount = player2.coinCount;
 

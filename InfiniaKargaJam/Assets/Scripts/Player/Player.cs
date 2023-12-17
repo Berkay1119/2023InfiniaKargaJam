@@ -20,7 +20,7 @@ public class Player:MonoBehaviour
 
     [SerializeField] private float stunDuration = 2f;
 
-    [SerializeField] private Ability[] abilities = new Ability[4];
+    [SerializeField] public Ability[] abilities = new Ability[4];
 
     [SerializeField] private GameObject boxToSpawn;
 

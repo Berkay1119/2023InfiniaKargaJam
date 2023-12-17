@@ -13,14 +13,23 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GameObject playerOnePrefab;
     [SerializeField] private GameObject playerTwoPrefab;
     [SerializeField] private float sizeMultiplier;
-
+    [SerializeField] private List<Coordinate> infiniteObstacleCoordinates;
+    [SerializeField] private SpawnableManager spawnableManager;
     private void Start()
     {
         GenerateGrid();
-
+        CreateObstacles();
         //_cameraTrnasform.position = new Vector3(_width / 2, _height / 2, -5);
     }
-    
+
+    private void CreateObstacles()
+    {
+        foreach (var coordinate in infiniteObstacleCoordinates)
+        {
+            spawnableManager.SpawnInfiniteObstacles(map[coordinate.y-1,coordinate.x-1]);
+        }
+    }
+
     private void GenerateGrid()
     {
         map = new Tile[_height, _width];
@@ -93,4 +102,11 @@ public class GridManager : MonoBehaviour
     }
 
     
+}
+
+[Serializable]
+internal struct Coordinate
+{
+    public int x;
+    public int y;
 }

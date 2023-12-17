@@ -19,7 +19,7 @@ public class Player:MonoBehaviour
             return;
         }
         Tile tile=currentTile.FindNextTile(vector);
-        if (tile==null)
+        if (tile==null || tile.spawnable is Obstacle)
         {
             return;
         }

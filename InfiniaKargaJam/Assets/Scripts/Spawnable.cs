@@ -10,7 +10,7 @@ public abstract class Spawnable : MonoBehaviour
     [SerializeField] private float destroyAnimationStartOffset = 3f;
     private SpriteRenderer _renderer;
 
-    private void Start()
+    public void Begin()
     {
         _renderer = GetComponent<SpriteRenderer>();
         Invoke("DestroyObject", lifeTime);
@@ -26,5 +26,10 @@ public abstract class Spawnable : MonoBehaviour
     private void FadeInOutAnimation()
     {
         //TODO dotween alpha yoyo
+    }
+
+    public void MakeTime(float second)
+    {
+        lifeTime=second;
     }
 }

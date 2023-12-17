@@ -6,17 +6,27 @@ using Random = UnityEngine.Random;
 
 public class SpawnableManager : MonoBehaviour
 {
-    private GridManager _gridManager;
-    private List<Tile> emptyTiles;
+    [SerializeField] private GridManager _gridManager;
+    private List<Tile> emptyTiles = new List<Tile>();
     [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private GameObject obstaclesPrefab;
     [SerializeField] private List<GameObject> rewardHazardPrefabs ;
+
+    [Header("Coin")] 
+    [SerializeField] private float firstCoinDelayAsSecond;
+    [SerializeField] private float minSpawnSecondForCoin=5f;
+    [SerializeField] private float maxSpawnSecondForCoin=10f;
+    [SerializeField] private int totalCoinCount=20;
+
+    [Header("Other Spawnable")] 
+    [SerializeField] private float firstOtherDelayAsSecond;
+    [SerializeField] private float minSpawnSecondForOther=3f;
+    [SerializeField] private float maxSpawnSecondForOther=15f;
 
     private void Start()
     {
-        _gridManager = GameObject.Find("Grid Manager").GetComponent<GridManager>();
-        
-        Invoke("SpawnCoin", 4f);
-        Invoke("SpawnRewardOrHazard", 5f);
+        //Invoke("SpawnCoin", firstCoinDelayAsSecond);
+        Invoke("SpawnRewardOrHazard", firstOtherDelayAsSecond);
     }
 
     private void GetEmptyTiles()
@@ -38,7 +48,20 @@ public class SpawnableManager : MonoBehaviour
     public void Spawn(GameObject spawnable, Tile tile)
     {
         var spawnedObj = Instantiate(spawnable, tile.transform.position, Quaternion.identity);
-        tile.spawnable = spawnedObj.GetComponent<Spawnable>();
+        Spawnable spawnableScript =spawnedObj.GetComponent<Spawnable>();
+        tile.spawnable = spawnableScript;
+        spawnableScript.spawnedTile = tile;
+        spawnableScript.Begin();
+    }
+    
+    public void SpawnInfiniteObstacles(Tile tile)
+    {
+        var spawnedObj = Instantiate(obstaclesPrefab, tile.transform.position, Quaternion.identity);
+        Spawnable spawnableScript =spawnedObj.GetComponent<Spawnable>();
+        spawnableScript.MakeTime(Single.MaxValue);
+        tile.spawnable = spawnableScript;
+        spawnableScript.spawnedTile = tile;
+        spawnableScript.Begin();
     }
     
     public void SpawnCoin()
@@ -50,7 +73,7 @@ public class SpawnableManager : MonoBehaviour
     {
         while (true)
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < totalCoinCount; i++)
             {
                 GetEmptyTiles();
                 if (emptyTiles.Count > 0)
@@ -59,7 +82,7 @@ public class SpawnableManager : MonoBehaviour
                     Spawn(coinPrefab, randomTile);
                 }
 
-                yield return new WaitForSeconds(Random.Range(3, 7));
+                yield return new WaitForSeconds(Random.Range(minSpawnSecondForCoin, maxSpawnSecondForCoin));
             }
         }
     }
@@ -81,7 +104,7 @@ public class SpawnableManager : MonoBehaviour
                 Spawn(randomSpawnObj, randomTile);
             }
 
-            yield return new WaitForSeconds(Random.Range(3, 10));
+            yield return new WaitForSeconds(Random.Range(minSpawnSecondForOther, maxSpawnSecondForOther));
         }
     }
 }

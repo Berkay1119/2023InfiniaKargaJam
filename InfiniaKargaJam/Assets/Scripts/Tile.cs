@@ -15,7 +15,7 @@ public class Tile : MonoBehaviour
     public Spawnable spawnable;
     public void Init(bool isOffset)
     {
-        _renderer.color = isOffset ? _offsetColor : _baseColor;
+        //_renderer.color = isOffset ? _offsetColor : _baseColor;
     }
 
     public Tile FindNextTile(Vector2 vector)

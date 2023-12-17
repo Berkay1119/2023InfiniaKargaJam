@@ -62,11 +62,15 @@ public class GridManager : MonoBehaviour
         Player player=Instantiate(playerOnePrefab).GetComponent<Player>();
         player.transform.position = map[2, 0].transform.position;
         player.SetTile(map[2,0]);
+
+        GameManager.Instance.player1 = player;
         
         player=Instantiate(playerTwoPrefab).GetComponent<Player>();
         player.transform.position = map[2, 8].transform.position;
         player.SetTile(map[2,8]);
         player.MakeReverse();
+        
+        GameManager.Instance.player2 = player;
     }
 
     private void SetCardinalTiles(Tile tile)

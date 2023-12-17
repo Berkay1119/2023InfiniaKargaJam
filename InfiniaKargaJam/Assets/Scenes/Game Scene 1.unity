@@ -219,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6cd7d30e929fb9b4e922d04424d0de93, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3dabd8094df456e43a7929591f645dba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -618,6 +618,50 @@ PrefabInstance:
       propertyPath: spawnableManager
       value: 
       objectReference: {fileID: 1163218013}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[0].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[0].y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[1].x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[1].y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[2].x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[2].y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[3].x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[3].y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[4].x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850351001829746904, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
+      propertyPath: infiniteObstacleCoordinates.Array.data[4].y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8346195117582754838, guid: b47a48b58fbce8342a94d7e7101cfa66, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8926643575661193004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8277306108833096307}
+  - component: {fileID: 3365372576179429044}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8277306108833096307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8926643575661193004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3365372576179429044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8926643575661193004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b074c16a461e8645bb3e9c6a649930b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  timeLeftText: {fileID: 0}
+  p1CoinCountText: {fileID: 0}
+  p2CoinCountText: {fileID: 0}
+  gameLenght: 20
+  gameLenghtLeft: 0
+  score1Renderer: {fileID: 0}
+  score2Renderer: {fileID: 0}
+  score3Renderer: {fileID: 0}
+  p1ScoreSprite: {fileID: 21300000, guid: 03c03c77fb57a174e99f8e2dace418ab, type: 3}
+  p2ScoreSprite: {fileID: 21300000, guid: 7594e690be545d34585db319d16f3dfb, type: 3}
+  drawScoreSprite: {fileID: 21300000, guid: a10ca55e8f8fa134a9789ddcc110dba6, type: 3}
+  p1RoundWinObj: {fileID: 0}
+  p1GameWinObj: {fileID: 0}
+  p2RoundWinObj: {fileID: 0}
+  p2GameWinObj: {fileID: 0}
+  drawRoundObj: {fileID: 0}
+  drawGameObj: {fileID: 0}

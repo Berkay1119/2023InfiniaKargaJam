@@ -3,7 +3,9 @@ public class TrapAbility:Ability
 {
     public override void Use(Player player)
     {
-        SpawnableManager.Instance.Spawn(player.GetTrap(),player.GetCurrentTile());
+        
+        Trap spawnable=(Trap)SpawnableManager.Instance.Spawn(player.GetTrap(),player.GetCurrentTile());
+        spawnable.owner = player;
         Destroy(gameObject);
     }
 }

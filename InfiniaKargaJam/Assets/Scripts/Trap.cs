@@ -10,6 +10,7 @@ public class Trap : Spawnable, Interactable
 
     public SpriteRenderer renderer;
 
+    
     private void DealDamage(Player player)
     {
         if (owner != player)

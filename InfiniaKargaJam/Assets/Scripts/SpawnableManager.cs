@@ -67,7 +67,7 @@ public class SpawnableManager : MonoBehaviour
         }
     }
 
-    public void Spawn(GameObject spawnable, Tile tile)
+    public Spawnable Spawn(GameObject spawnable, Tile tile)
     {
         var spawnedObj = Instantiate(spawnable, tile.transform.position, Quaternion.identity);
         Spawnable spawnableScript =spawnedObj.GetComponent<Spawnable>();
@@ -78,6 +78,7 @@ public class SpawnableManager : MonoBehaviour
         //     ((Trap)spawnableScript).owner = Trap.WhoToDamage.All;
         // }
         spawnableScript.Begin();
+        return spawnableScript;
     }
     
     public void SpawnInfiniteObstacles(Tile tile)
@@ -97,6 +98,10 @@ public class SpawnableManager : MonoBehaviour
 
     public void DropCoin(Tile tile, int amount)
     {
+        if (amount==0)
+        {
+            return;
+        }
         var spawnedObj = Instantiate(coinPrefab, tile.transform.position, Quaternion.identity);
         Spawnable spawnableScript = spawnedObj.GetComponent<Spawnable>();
         tile.spawnable = spawnableScript;

@@ -19,14 +19,19 @@ public class Laser:Ability
 
     private IEnumerator TraverseTiles(Player player)
     {
-        foreach (var tile in player.GetCurrentTile().cardinalAdjacentTiles)
+        while (true)
         {
+            dangerousTiles.Clear();
+            foreach (var tile in player.GetCurrentTile().cardinalAdjacentTiles)
+            {
             
-            dangerousTiles=tile.MakeDangerousInVector(player.GetCurrentTile().transform.position-tile.transform.position);
-            dangerousTiles.Add(tile);
-            yield return new WaitForSeconds(waitSecondForNextDirection);
-            tile.MakeUnDangerousInVector(player.GetCurrentTile().transform.position-tile.transform.position);
+                dangerousTiles=tile.MakeDangerousInVector(player.GetCurrentTile().transform.position-tile.transform.position);
+                dangerousTiles.Add(tile);
+                yield return new WaitForSeconds(waitSecondForNextDirection);
+                tile.MakeUnDangerousInVector(player.GetCurrentTile().transform.position-tile.transform.position);
+            }
         }
+        
     }
 
     public override void Released(Player player)

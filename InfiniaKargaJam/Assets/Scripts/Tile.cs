@@ -14,7 +14,8 @@ public class Tile : MonoBehaviour
 
     public Spawnable spawnable;
     
-    [SerializeField] private Color dangerColor=Color.red;
+    [SerializeField] private Sprite glowSprite;
+    
     public Player currentPlayer;
     public void Init(bool isOffset)
     {
@@ -61,7 +62,7 @@ public class Tile : MonoBehaviour
             }
         }
 
-        _renderer.color = dangerColor;
+        Glow(true);
         return dangerousTiles;
     }
 
@@ -75,11 +76,23 @@ public class Tile : MonoBehaviour
             }
         }
 
-        _renderer.color = Color.white;
+        Glow(false);
     }
 
     public void MakeUnDangerous()
     {
-        _renderer.color = Color.white;
+        Glow(false);
+    }
+
+    public void Glow(bool active)
+    {
+        if (active)
+        {
+            _renderer.sprite = glowSprite;
+        }
+        else
+        {
+            _renderer.sprite = null;
+        }
     }
 }

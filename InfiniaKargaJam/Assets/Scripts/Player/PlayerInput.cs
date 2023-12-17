@@ -14,8 +14,9 @@ public class PlayerInput : MonoBehaviour
     private bool[] coroutineIsRunning = new bool[4];
     private bool[] coroutineIsCompleted = new bool[4];
     public bool isStunned;
+    public bool locked;
 
-    
+
     private void OnMessageArrived(string msg)
     {
         if(isStunned) return;
@@ -24,6 +25,7 @@ public class PlayerInput : MonoBehaviour
         
         if (stringArray[1]=="0")
         {
+            if (locked) return;
             if (!coroutineIsRunning.Contains(true))
             {
                 coroutineIsRunning[int.Parse(stringArray[0])-1] = true;
@@ -47,7 +49,7 @@ public class PlayerInput : MonoBehaviour
                 return;
             }
             
-            
+            if (locked) return;
             //Handle Button Up
             if (stringArray[0]=="1")
             {

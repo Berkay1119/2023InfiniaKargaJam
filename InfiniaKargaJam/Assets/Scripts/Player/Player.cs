@@ -19,6 +19,7 @@ public class Player:MonoBehaviour
 
     [SerializeField] private float stunDuration = 2f;
 
+    [SerializeField] private Ability[] abilities = new Ability[4]; 
     public void Move(Vector2 vector)
     {
         if (isMoving)
@@ -42,10 +43,11 @@ public class Player:MonoBehaviour
                 transform.localScale =
                     new Vector3(currentTile.transform.position.x > tile.transform.position.x ? -1 : 1,1, 1);
             }
-            
-            
+            currentTile.currentPlayer = null;
         }
+        
         currentTile = tile;
+        currentTile.currentPlayer = this;
         GoToTile(currentTile);
     }
     private void GoToTile(Tile tile)
@@ -126,5 +128,25 @@ public class Player:MonoBehaviour
         yield return new WaitForSeconds(stunDuration);
 
         playerInput.isStunned = false;
+    }
+    public Tile GetCurrentTile()
+    {
+        return currentTile;
+    }
+
+    public void ActivateAbility(int commandIndex)
+    {
+        if (abilities[commandIndex]!=null)
+        {
+            abilities[commandIndex].Use(this);
+        }
+    }
+
+    public void AbilityReleased(int commandIndex)
+    {
+        if (abilities[commandIndex]!=null)
+        {
+            abilities[commandIndex].Released(this);
+        }
     }
 }

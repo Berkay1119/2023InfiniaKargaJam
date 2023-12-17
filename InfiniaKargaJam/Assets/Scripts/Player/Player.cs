@@ -1,16 +1,23 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using DefaultNamespace;
 using DG.Tweening;
 using UnityEngine;
 
 
 public class Player:MonoBehaviour
 {
-    [SerializeField] private float playerSpeed=1f;
+    [SerializeField] private float playerSpeed = 1f;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private Animator animator;
     private Tile currentTile;
     private bool isMoving;
     private static readonly int isMovingParameter = Animator.StringToHash("isMoving");
+
+    public int coinCount;
+
+    [SerializeField] private float stunDuration = 2f;
 
     public void Move(Vector2 vector)
     {
@@ -50,12 +57,73 @@ public class Player:MonoBehaviour
         {
             animator.SetBool(isMovingParameter,false);
             isMoving = false;
+            if (currentTile.spawnable is Interactable)
+            {
+                ((Interactable)currentTile.spawnable).Interact(this);
+            }
         });
     }
-
-
+    
     public void MakeReverse()
     {
         transform.localScale = new Vector3(-1, 1 ,1);
+    }
+
+    public void LootCoin(int amount)
+    {
+        coinCount += amount;
+    }
+
+    public void TakeDamage()
+    {
+        DropCoins();
+        StartCoroutine(DamageTakenCoroutine());
+    }
+
+    private void DropCoins()
+    {
+        List<Tile> availableTiles = new List<Tile>();
+        for (int i = 0; i < currentTile.cardinalAdjacentTiles.Count; i++)
+        {
+            if (currentTile.cardinalAdjacentTiles[i].spawnable == null)
+            {
+                availableTiles.Add(currentTile.cardinalAdjacentTiles[i]);
+            }
+        }
+        for (int i = 0; i < currentTile.diagonalAdjacentTiles.Count; i++)
+        {
+            if (currentTile.diagonalAdjacentTiles[i].spawnable == null)
+            {
+                availableTiles.Add(currentTile.diagonalAdjacentTiles[i]);
+            }
+        }
+        
+        var adjacentTileCount = availableTiles.Count;
+        var coinsToDrop = coinCount / 2;
+        var baseAmountToDrop = coinsToDrop / adjacentTileCount;
+        var remainderCoins = coinsToDrop % adjacentTileCount;
+        List<int> coinsOnTiles = new List<int>();
+        for (int i = 0; i < adjacentTileCount; i++)
+        {
+            coinsOnTiles.Add(baseAmountToDrop);
+        }
+        for (int i = 0; i < remainderCoins; i++)
+        {
+            coinsOnTiles[i]++;
+        }
+
+        for (int i = 0; i < availableTiles.Count; i++)
+        {
+            SpawnableManager.Instance.DropCoin(availableTiles[i], coinsOnTiles[i]);
+        }
+    }
+    
+    private IEnumerator DamageTakenCoroutine()
+    {
+        playerInput.isStunned = true;
+
+        yield return new WaitForSeconds(stunDuration);
+
+        playerInput.isStunned = false;
     }
 }

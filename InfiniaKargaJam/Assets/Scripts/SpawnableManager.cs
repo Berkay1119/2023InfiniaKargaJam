@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class SpawnableManager : MonoBehaviour
 {
+    public static SpawnableManager Instance { get; private set; }
+
+    
     [SerializeField] private GridManager _gridManager;
     private List<Tile> emptyTiles = new List<Tile>();
     [SerializeField] private GameObject coinPrefab;
@@ -23,6 +26,18 @@ public class SpawnableManager : MonoBehaviour
     [SerializeField] private float minSpawnSecondForOther=3f;
     [SerializeField] private float maxSpawnSecondForOther=15f;
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        }
+    }
+    
     private void Start()
     {
         //Invoke("SpawnCoin", firstCoinDelayAsSecond);
@@ -51,6 +66,10 @@ public class SpawnableManager : MonoBehaviour
         Spawnable spawnableScript =spawnedObj.GetComponent<Spawnable>();
         tile.spawnable = spawnableScript;
         spawnableScript.spawnedTile = tile;
+        // if (spawnedObj.CompareTag("Trap"))
+        // {
+        //     ((Trap)spawnableScript).owner = Trap.WhoToDamage.All;
+        // }
         spawnableScript.Begin();
     }
     
@@ -67,6 +86,16 @@ public class SpawnableManager : MonoBehaviour
     public void SpawnCoin()
     {
         StartCoroutine(SpawnCoinRoutine());
+    }
+
+    public void DropCoin(Tile tile, int amount)
+    {
+        var spawnedObj = Instantiate(coinPrefab, tile.transform.position, Quaternion.identity);
+        Spawnable spawnableScript = spawnedObj.GetComponent<Spawnable>();
+        tile.spawnable = spawnableScript;
+        spawnableScript.spawnedTile = tile;
+        ((Coin)spawnableScript).coinAmount = amount;
+
     }
 
     private IEnumerator SpawnCoinRoutine()

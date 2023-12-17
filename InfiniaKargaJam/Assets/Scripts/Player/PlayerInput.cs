@@ -13,10 +13,13 @@ public class PlayerInput : MonoBehaviour
     private Coroutine[] holdCoroutine = new Coroutine[4];
     private bool[] coroutineIsRunning = new bool[4];
     private bool[] coroutineIsCompleted = new bool[4];
+    public bool isStunned;
 
     
     private void OnMessageArrived(string msg)
     {
+        if(isStunned) return;
+        
         string[] stringArray=msg.Split(" ");
 
         

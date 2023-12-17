@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Coin : Loot
 {
-    public float coinAmount;
+    public int coinAmount;
     
     public override void Collect(Player player)
     {
-        //TODO increase player coin amount
+        player.LootCoin(coinAmount);
         DestroyObject();
     }
 }

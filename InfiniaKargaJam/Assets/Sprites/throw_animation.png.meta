@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8c3e5ed288fd30469bc42bd32441d14
+guid: 167bc31e1b4f2654fb512a180c4cfe5c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: question_mark_0
+      name: throw_animation_0
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 1183
-        width: 300
-        height: 416
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 33
+        y: 828
+        width: 621
+        height: 719
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75738b2d5a79dc34bb79b0586a575bc3
-      internalID: -170253873
+      spriteID: b38ded02cd9647f479acd9119403eecb
+      internalID: -391880615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: question_mark_1
+      name: throw_animation_1
       rect:
         serializedVersion: 2
-        x: 1701
-        y: 1236
-        width: 4
-        height: 4
+        x: 721
+        y: 784
+        width: 638
+        height: 677
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73e641e9b8eddb64e95e3cc2d1affe40
-      internalID: -202228005
+      spriteID: 679c087344f627b42b42eb7b36b6573d
+      internalID: 667726499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_animation_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 70
+        width: 621
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec8ecb84f104e54faf9a97353f43d93
+      internalID: 978436936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_animation_3
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 62
+        width: 637
+        height: 679
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895b1d5e18116644da9e67f990132aae
+      internalID: -482095327
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      question_mark_0: -170253873
-      question_mark_1: -202228005
+      throw_animation_0: -391880615
+      throw_animation_1: 667726499
+      throw_animation_2: 978436936
+      throw_animation_3: -482095327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

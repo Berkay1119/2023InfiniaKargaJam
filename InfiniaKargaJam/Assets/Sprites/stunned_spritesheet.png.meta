@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8c3e5ed288fd30469bc42bd32441d14
+guid: b1576853ff0165f4392a7645abeff721
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: question_mark_0
+      name: stunned_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 1183
-        width: 300
-        height: 416
-      alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+        x: 155
+        y: 875
+        width: 809
+        height: 676
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75738b2d5a79dc34bb79b0586a575bc3
-      internalID: -170253873
+      spriteID: 955b575696907e94a94511b016641d6b
+      internalID: -134396977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: question_mark_1
+      name: stunned_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1701
-        y: 1236
-        width: 4
-        height: 4
+        x: 1096
+        y: 840
+        width: 812
+        height: 670
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73e641e9b8eddb64e95e3cc2d1affe40
-      internalID: -202228005
+      spriteID: 3a43246e2317d9349bc35abc214c4a56
+      internalID: -188217414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stunned_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 155
+        width: 787
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00aba1ac392e2c3428bcb80368f99b36
+      internalID: 1075434231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stunned_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 141
+        width: 814
+        height: 673
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248cdc568ea278045bcf20131ca8ca3e
+      internalID: 1362831090
       vertices: []
       indices: 
       edges: []
@@ -154,7 +196,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 2dd07af2b1e2e9f4aaa73feaea8c52a0
     internalID: 0
     vertices: []
     indices: 
@@ -162,8 +204,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      question_mark_0: -170253873
-      question_mark_1: -202228005
+      stunned_spritesheet_0: -134396977
+      stunned_spritesheet_1: -643779324
+      stunned_spritesheet_10: -336529671
+      stunned_spritesheet_11: 1729685787
+      stunned_spritesheet_12: 1066483995
+      stunned_spritesheet_13: -1155792386
+      stunned_spritesheet_2: -209365898
+      stunned_spritesheet_3: -472773997
+      stunned_spritesheet_4: -188217414
+      stunned_spritesheet_5: 627018554
+      stunned_spritesheet_6: 1166624480
+      stunned_spritesheet_7: 1075434231
+      stunned_spritesheet_8: -1065306444
+      stunned_spritesheet_9: 1362831090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

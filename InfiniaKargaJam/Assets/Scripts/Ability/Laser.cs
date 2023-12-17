@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Laser:Ability
 {
-    [SerializeField] private GameObject arrow;
+    [SerializeField] private GameObject ball;
+    [SerializeField] private float ballSpeed;
+    [SerializeField] private float ballRotateSpeed=120f;
 
     [SerializeField] private float waitSecondForNextDirection=1f;
 
     private List<Tile> dangerousTiles = new List<Tile>();
     
     private Coroutine holdCoroutine;
+    private static readonly int Property = Animator.StringToHash("throw");
+    [SerializeField] private float distanceThreshold=1f;
+
     public override void Use(Player player)
     {
         transform.position = player.GetCurrentTile().transform.position;
@@ -35,8 +41,9 @@ public class Laser:Ability
     }
 
     public override void Released(Player player)
-    {
+    {  
         base.Released(player);
+        player.GetAnimator().SetTrigger(Property);
         
         if (holdCoroutine!=null)
         {
@@ -49,6 +56,19 @@ public class Laser:Ability
             {
                 //TODO:Take Damage
                 Debug.Log("Damage taken");
+                ball.transform.parent = null;
+                ball.gameObject.SetActive(true);
+                ball.transform.DORotate(Vector3.forward*360f, ballRotateSpeed,RotateMode.FastBeyond360).SetSpeedBased();
+                ball.transform.DOMove(tile.transform.position, ballSpeed).SetSpeedBased().OnUpdate(() =>
+                {
+                    if ((ball.transform.position-tile.transform.position).magnitude<distanceThreshold)
+                    {
+                        tile.currentPlayer.TakeDamage();
+                    }
+                }).OnComplete(() =>
+                {
+                    Destroy(ball);
+                });
             }
 
             tile.MakeUnDangerous();

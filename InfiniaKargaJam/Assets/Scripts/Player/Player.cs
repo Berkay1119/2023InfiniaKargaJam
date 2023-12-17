@@ -25,6 +25,13 @@ public class Player:MonoBehaviour
     [SerializeField] private GameObject boxToSpawn;
 
     [SerializeField] private GameObject trapToSpawn;
+    private static readonly int isStunnedParameter = Animator.StringToHash("isStunned");
+
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
+    
     public void Move(Vector2 vector)
     {
         if (isMoving)
@@ -130,9 +137,9 @@ public class Player:MonoBehaviour
     private IEnumerator DamageTakenCoroutine()
     {
         playerInput.isStunned = true;
-
+        animator.SetBool(isStunnedParameter,true);
         yield return new WaitForSeconds(stunDuration);
-
+        animator.SetBool(isStunnedParameter,false);
         playerInput.isStunned = false;
     }
     public Tile GetCurrentTile()

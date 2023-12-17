@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8c3e5ed288fd30469bc42bd32441d14
+guid: 951398bb94fa91444a92d3c816d377d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,43 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: question_mark_0
+      name: ball_0
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 1183
-        width: 300
-        height: 416
+        x: 1152
+        y: 1191
+        width: 303
+        height: 346
       alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+      pivot: {x: 0.33699986, y: 0.68352634}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75738b2d5a79dc34bb79b0586a575bc3
-      internalID: -170253873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: question_mark_1
-      rect:
-        serializedVersion: 2
-        x: 1701
-        y: 1236
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73e641e9b8eddb64e95e3cc2d1affe40
-      internalID: -202228005
+      spriteID: a4b5e3c625a416b4a98b31f3dfebf8bb
+      internalID: -583861825
       vertices: []
       indices: 
       edges: []
@@ -154,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f79bfde951c1d5143895f662cca2ff13
     internalID: 0
     vertices: []
     indices: 
@@ -162,8 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      question_mark_0: -170253873
-      question_mark_1: -202228005
+      ball_0: -583861825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

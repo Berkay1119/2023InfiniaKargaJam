@@ -9,6 +9,7 @@ public class AbilityDrop : Loot
     public override void Collect(Player player)
     {
         player.TakeAbility(prefabForAbility);
+        SoundManager.Instance.sfxAudioSource.PlayOneShot(SoundManager.Instance.lootClip);
         DestroyObject();
     }
 }

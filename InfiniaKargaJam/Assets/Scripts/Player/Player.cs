@@ -84,6 +84,7 @@ public class Player:MonoBehaviour
     public void TakeDamage()
     {
         DropCoins();
+        SoundManager.Instance.sfxAudioSource.PlayOneShot(SoundManager.Instance.takeDamage1Clip);
         CameraShakeManager.Instance.StartShake();
         StartCoroutine(DamageTakenCoroutine());
     }
@@ -105,7 +106,7 @@ public class Player:MonoBehaviour
                 availableTiles.Add(currentTile.diagonalAdjacentTiles[i]);
             }
         }
-        
+
         var adjacentTileCount = availableTiles.Count;
         var coinsToDrop = coinCount / 2;
         var baseAmountToDrop = coinsToDrop / adjacentTileCount;
@@ -166,9 +167,9 @@ public class Player:MonoBehaviour
     }
 
     public void MakeFaster(float newSpeed)
-    { ;
+    { 
         playerSpeed = newSpeed;
-        
+        SoundManager.Instance.sfxAudioSource.PlayOneShot(SoundManager.Instance.hasteClip);
     }
 
     public float GetSpeed()

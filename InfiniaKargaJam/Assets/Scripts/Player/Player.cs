@@ -27,6 +27,11 @@ public class Player:MonoBehaviour
     [SerializeField] private GameObject trapToSpawn;
     private static readonly int isStunnedParameter = Animator.StringToHash("isStunned");
 
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
+    
     public void Move(Vector2 vector)
     {
         if (isMoving)
